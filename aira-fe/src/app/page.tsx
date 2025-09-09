@@ -17,6 +17,7 @@ export interface data {
   water_level: number;
   generated_v: number;
 }
+export const revalidate = 60;
 
 export interface predData {
   //   doc["valve_pos"] = pos;
