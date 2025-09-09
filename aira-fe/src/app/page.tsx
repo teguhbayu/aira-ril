@@ -17,7 +17,6 @@ export interface data {
   water_level: number;
   generated_v: number;
 }
-export const revalidate = 60;
 
 export interface predData {
   //   doc["valve_pos"] = pos;
@@ -32,6 +31,8 @@ const valveMap = {
 };
 
 type valveStatus = "OPENED" | "CLOSED";
+
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   const [data, setData] = useState<data>({
