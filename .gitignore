@@ -1,0 +1,8 @@
+aira/
+aira-esp/
+rainwater-rule-based-optimizer/
+script/
+!aira-fe/
+!aira-ai-api/
+!docker-compose.yml
+!.gitignore

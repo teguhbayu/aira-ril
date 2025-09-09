@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "aira-esp",
+		"path": "aira-esp"
+	}
+],
+  "settings": {
+    "FSharp.suggestGitignore": false
+  }
+}
