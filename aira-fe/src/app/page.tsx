@@ -45,7 +45,7 @@ export default function Home() {
   const [capacity, setCapacity] = useState<number>(0);
 
   useEffect(() => {
-    const client = mqtt.connect("ws://127.0.0.1:8080");
+    const client = mqtt.connect("ws://aira.teguhbayu.xyz:8080");
 
     client.subscribe("initopic", (err) => {});
 
@@ -56,7 +56,7 @@ export default function Home() {
         setData(parsedData);
         setPastData((i) => [...(i.length >= 5 ? i.slice(1) : i), parsedData]);
         axios
-          .post("http://127.0.0.1:5000/", {
+          .post("http://aira.teguhbayu.xyz:5000/", {
             valve_pos: (Math.abs(parsedData.valve_pos - 180) / 180) * 100,
             water_level: parsedData.water_level,
           })
