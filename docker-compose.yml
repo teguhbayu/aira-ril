@@ -6,6 +6,10 @@ services:
       - 3000:3000
     build: ./aira-fe
     env_file: envs/.fe-env
+    environment:
+      - GEMINI_API=${GEMINI_API}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
     depends_on:
       - mqtt
       - ai-api
