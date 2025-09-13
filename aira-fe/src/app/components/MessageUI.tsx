@@ -1,5 +1,4 @@
 "use client";
-import geminiClient from "@/utils/gemini-api";
 import {
   ChatContainer,
   MainContainer,
@@ -12,14 +11,6 @@ import "@chatscope/chat-ui-kit-styles/dist/default/styles.css";
 import { useState } from "react";
 import { data } from "../page";
 import InvokeLangChain from "../actions/langchain-rag";
-
-export const generateContent = async (prompt: string, prev: any[]) => {
-  const result = await geminiClient.invoke([
-    ...prev,
-    { role: "user", content: prompt },
-  ]);
-  return result.content;
-};
 
 export default function MessageUI({ data }: { data: data }) {
   const [isLoading, setIsLoading] = useState(false);
