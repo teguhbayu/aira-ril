@@ -1,5 +1,3 @@
-"use server";
-
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 
 const geminiClient = new ChatGoogleGenerativeAI({
