@@ -33,7 +33,7 @@ export default async function InvokeLangChain({
   const index = pc.Index(index_name);
 
   const embedModel = new GoogleGenerativeAIEmbeddings({
-    apiKey: process.env.NEXT_PUBLIC_GEMINI_API,
+    apiKey: process.env.GEMINI_API,
     model: "models/embedding-001",
   });
 
@@ -57,6 +57,8 @@ export default async function InvokeLangChain({
     input: prompt,
     chat_history: chatHistory,
   });
+
+  console.log(res.answer);
 
   return res.answer;
 }
