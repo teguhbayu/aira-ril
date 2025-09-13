@@ -60,7 +60,7 @@ export default function Home() {
         axios
           .post("http://aira.teguhbayu.xyz:5000/", {
             valve_pos: (Math.abs(parsedData.valve_pos - 180) / 180) * 100,
-            water_level: parsedData.water_level,
+            water_level: (Math.abs(parsedData.water_level - 20) / 20) * 100,
           })
           .then((i) => {
             setPredData((j) => [
@@ -77,7 +77,7 @@ export default function Home() {
     }
     if (valveMap[`${data.valve_pos}` as "0" | "180"] !== valve)
       setValve(valveMap[`${data.valve_pos}` as "0" | "180"] as valveStatus);
-    setCapacity(data.water_level);
+    setCapacity((Math.abs(data.water_level - 20) / 20) * 100);
   }, [data]);
 
   return (
